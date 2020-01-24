@@ -1,0 +1,64 @@
+{
+  "name": "restrict-v",
+  "version": "0.1.0",
+  "description": "A lightweight, extensible set of tools for applying limitations to runtime values",
+  "license": "GPL-3.0-or-later",
+  "repository": "github:jpcx/restrict-v",
+  "author": {
+    "name": "Justin Collier",
+    "email": "jpcxist@gmail.com",
+    "url": "https://github.com/jpcx"
+  },
+  "keywords": [
+		"assert",
+		"assertion",
+		"parameter",
+		"check",
+		"range",
+		"type",
+    "value",
+		"restriction",
+		"restrict",
+		"throw",
+		"error",
+		"safe",
+		"safety",
+		"freeze",
+		"deep"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepublishOnly": "yarn build",
+    "prebuild": "yarn clean && yarn lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "jest --verbose",
+    "coverage": "jest --coverage",
+    "watch": "yarn build -- --watch",
+    "watch:test": "jest --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "23.x.x",
+    "@types/node": "10.x.x",
+    "coveralls": "3.x.x",
+    "jest": "23.x.x",
+    "rimraf": "2.x.x",
+    "ts-jest": "23.x.x",
+    "ts-node": "7.x.x",
+    "tslint": "5.x.x",
+    "tslint-config-prettier": "1.x.x",
+    "typescript": "3.x.x"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "jest": {
+    "preset" : "ts-jest"
+  }
+}
